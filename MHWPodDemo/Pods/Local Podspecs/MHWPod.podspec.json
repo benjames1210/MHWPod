@@ -1,0 +1,24 @@
+{
+  "name": "MHWPod",
+  "version": "0.0.1",
+  "summary": "MHWPod.",
+  "description": "MHWPod",
+  "homepage": "https://github.com/benjames1210/MHWPod.git",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "ben": "ben@sabia.me"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source": {
+    "git": "https://github.com/benjames1210/MHWPod.git",
+    "tag": "0.0.1"
+  },
+  "source_files": "MHWPod/**/*.{h,m}",
+  "resources": "MHWPod/**/Resources/CloudLearning_English_Base.xcassets",
+  "requires_arc": true
+}
