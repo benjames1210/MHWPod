@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
   s.summary      = "MHWPod."
   #pod详细描述
   s.description  = <<-DESC
-                    MHWPod
+                    "MHWPod -- Miao Huawei's base pod"
                    DESC
   #项目主页地址
   s.homepage     = "https://github.com/benjames1210/MHWPod.git"
@@ -22,10 +22,10 @@ Pod::Spec.new do |s|
   s.license      = { :type => "MIT", :file => "LICENSE" }
   #作者
   s.author             = { "ben" => "ben@sabia.me" }
-  # Or just: s.author    = "xuqiang"
-  # s.authors            = { "xuqiang" => "xuqiang@100tal.com" }
+  # Or just: s.author    = "ben"
+  # s.authors            = { "ben" => "ben@sabia.me" }
   #社交网址 微薄或者博客
-  # s.social_media_url   = "xuqiang@100tal.com"
+  # s.social_media_url   = "ben@sabia.me"
 
   #库支持的最低系统版本
   s.platform     = :ios, "8.0"
@@ -40,7 +40,7 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/benjames1210/MHWPod.git", :tag => s.version.to_s }
 
   #需要包含的源文件
-#  s.source_files  = "MHWPod/MHWPod/**/*.{h,m}"
+  s.source_files  = "MHWPod/**/*.{h,m}"
   #需要移除的文件
   # s.exclude_files = "Classes/Exclude"
   #公开的头文件。如果没有指定公共头文件，那么source文件中的所有头文件都被认为是公开的。
@@ -51,35 +51,44 @@ Pod::Spec.new do |s|
   # s.resource  = "icon.png"
   #资源文件
   # s.resources = "Resources/*.png"
-#  s.resources = "MHWPod/MHWPod/**/Resources/CloudLearning_English_Base.xcassets"
+  s.resources = "MHWPod/Base/Resources/*.xcassets"
+  s.resources = "MHWPod/Base/Resources/Bundle/*.bundle"
+  s.resources = "MHWPod/Base/Resources/Plist/*.plist"
+  s.resources = "MHWPod/Base/Resources/Fonts/*.TTF"
   # s.preserve_paths = "FilesToSave", "MoreFilesToSave"
 
   #需要系统framwork
   # s.ios.framework  = "SomeFramework"
   # s.frameworks = "SomeFramework", "AnotherFramework"
-
+  s.ios.frameworks = "AVFoundation", "MediaPlayer","Foundation", "UIKit", "VideoToolbox", "QuartzCore", "OpenGLES", "MobileCoreServices", "CoreVideo", "CoreMedia", "CoreGraphics", "AudioToolbox","Security","CoreTelephony","SystemConfiguration"
   #需要的系统libraries
   # s.library   = "iconv"
   # s.libraries = "iconv", "xml2"
+  s.libraries    = 'stdc++','bz2','c++','z','sqlite3.0','resolv'
 
   #是否支持Arc
-  s.requires_arc = true
+#  s.requires_arc = true
 
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
 
   #依赖库 可以写多个 依赖关系可以指定版本需求
+  s.dependency 'Masonry'
+  s.dependency 'MJRefresh'
+  s.dependency 'YYModel'
+  s.dependency 'lottie-ios'
+  s.dependency 'SDWebImage'
+  s.dependency 'AFNetworking'
 
 
+#  s.default_subspecs = 'Base'
+#
+#  s.subspec 'Base' do |bs|
+#      bs.source_files = 'MHWPod/Base/**/*.{h,m}'
+#      bs.resources = ['MHWPod/Base/Resources/*.xcassets', 'MHWPod/Base/Resources/Bundle/*.bundle', 'MHWPod/Base/Resources/Plist/*.plist', 'MHWPod/Base/Resources/Plist/*.h', 'MHWPod/Base/Resources/Fonts/*.TTF']
+#      bs.dependency 'Masonry'
+#      bs.dependency 'MJRefresh'
+#      bs.dependency 'YYModel'
+#      bs.dependency 'lottie-ios'
 
-  s.default_subspecs = 'Base'
-
-  s.subspec 'Base' do |bs|
-      bs.source_files = 'MHWPod/Base/**/*.{h,m}'
-      bs.resources = ['MHWPod/Base/Resources/*.xcassets', 'MHWPod/Base/Resources/Bundle/*.bundle', 'MHWPod/Base/Resources/Plist/*.plist', 'MHWPod/Base/Resources/Plist/*.h', 'MHWPod/Base/Resources/Fonts/*.TTF']
-      bs.dependency 'Masonry'
-      bs.dependency 'MJRefresh'
-      bs.dependency 'YYModel'
-      bs.dependency 'lottie-ios'
-
-  end
+#  end
 end
