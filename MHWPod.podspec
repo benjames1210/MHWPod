@@ -40,7 +40,7 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/benjames1210/MHWPod.git", :tag => s.version.to_s }
 
   #需要包含的源文件
-  s.source_files  = "MHWPod/**/*.{h,m}"
+#  s.source_files  = "MHWPod/**/*.{h,m}"
   #需要移除的文件
   # s.exclude_files = "Classes/Exclude"
   #公开的头文件。如果没有指定公共头文件，那么source文件中的所有头文件都被认为是公开的。
@@ -51,10 +51,10 @@ Pod::Spec.new do |s|
   # s.resource  = "icon.png"
   #资源文件
   # s.resources = "Resources/*.png"
-  s.resources = "MHWPod/Base/Resources/*.xcassets"
-  s.resources = "MHWPod/Base/Resources/Bundle/*.bundle"
-  s.resources = "MHWPod/Base/Resources/Plist/*.plist"
-  s.resources = "MHWPod/Base/Resources/Fonts/*.TTF"
+#  s.resources = "MHWPod/Base/Resources/*.xcassets"
+#  s.resources = "MHWPod/Base/Resources/Bundle/*.bundle"
+#  s.resources = "MHWPod/Base/Resources/Plist/*.plist"
+#  s.resources = "MHWPod/Base/Resources/Fonts/*.TTF"
   # s.preserve_paths = "FilesToSave", "MoreFilesToSave"
 
   #需要系统framwork
@@ -67,7 +67,7 @@ Pod::Spec.new do |s|
   s.libraries    = 'stdc++','bz2','c++','z','sqlite3.0','resolv'
 
   #是否支持Arc
-#  s.requires_arc = true
+  s.requires_arc = true
 
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
 
@@ -80,15 +80,11 @@ Pod::Spec.new do |s|
   s.dependency 'AFNetworking'
 
 
-#  s.default_subspecs = 'Base'
-#
-#  s.subspec 'Base' do |bs|
-#      bs.source_files = 'MHWPod/Base/**/*.{h,m}'
-#      bs.resources = ['MHWPod/Base/Resources/*.xcassets', 'MHWPod/Base/Resources/Bundle/*.bundle', 'MHWPod/Base/Resources/Plist/*.plist', 'MHWPod/Base/Resources/Plist/*.h', 'MHWPod/Base/Resources/Fonts/*.TTF']
-#      bs.dependency 'Masonry'
-#      bs.dependency 'MJRefresh'
-#      bs.dependency 'YYModel'
-#      bs.dependency 'lottie-ios'
+  s.default_subspecs = 'Base'
 
-#  end
+  s.subspec 'Base' do |bs|
+      bs.source_files = 'MHWPod/Base/**/*.{h,m,mm}'
+      bs.resources = ['MHWPod/Base/BaseResources/*.xcassets', 'MHWPod/Base/BaseResources/*.bundle', 'MHWPod/Base/BaseResources/*.plist', 'MHWPod/Base/BaseResources/*.h', 'MHWPod/Base/BaseResources/Fonts/*.TTF']
+
+  end
 end
