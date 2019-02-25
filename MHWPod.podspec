@@ -85,6 +85,6 @@ Pod::Spec.new do |s|
   s.subspec 'Base' do |bs|
       bs.source_files = 'MHWPod/Base/**/*.{h,m,mm}'
       bs.resources = ['MHWPod/Base/BaseResources/*.xcassets', 'MHWPod/Base/BaseResources/*.bundle', 'MHWPod/Base/BaseResources/*.plist', 'MHWPod/Base/BaseResources/*.h', 'MHWPod/Base/BaseResources/Fonts/*.TTF']
-
+      bs.dependency 'Masonry'
   end
 end

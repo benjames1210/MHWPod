@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Masonry.h"
 
 @interface MHWBaseView : UIView
+
+-(void)addImageIntoBackgroundWithPath:(NSString *)imagePath;
+-(void)addImageIntoBackgroundWithURL:(NSString *)imageUrl;
 
 @end

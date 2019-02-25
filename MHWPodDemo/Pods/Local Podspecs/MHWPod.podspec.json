@@ -18,14 +18,6 @@
     "git": "https://github.com/benjames1210/MHWPod.git",
     "tag": "0.0.1"
   },
-  "source_files": "MHWPod/Base/**/*.{h,m}",
-  "resources": [
-    "MHWPod/Base/Resources/*.xcassets",
-    "MHWPod/Base/Resources/Bundle/*.bundle",
-    "MHWPod/Base/Resources/Plist/*.plist",
-    "MHWPod/Base/Resources/Plist/*.h",
-    "MHWPod/Base/Resources/Fonts/*.TTF"
-  ],
   "ios": {
     "frameworks": [
       "AVFoundation",
@@ -53,18 +45,44 @@
     "sqlite3.0",
     "resolv"
   ],
+  "requires_arc": true,
   "dependencies": {
     "Masonry": [
-      "1.1.0"
+
     ],
     "MJRefresh": [
-      "3.1.15.1"
+
     ],
     "YYModel": [
-      "1.0.4"
+
     ],
     "lottie-ios": [
-      "2.5.0"
+
+    ],
+    "SDWebImage": [
+
+    ],
+    "AFNetworking": [
+
     ]
-  }
+  },
+  "default_subspecs": "Base",
+  "subspecs": [
+    {
+      "name": "Base",
+      "source_files": "MHWPod/Base/**/*.{h,m,mm}",
+      "resources": [
+        "MHWPod/Base/BaseResources/*.xcassets",
+        "MHWPod/Base/BaseResources/*.bundle",
+        "MHWPod/Base/BaseResources/*.plist",
+        "MHWPod/Base/BaseResources/*.h",
+        "MHWPod/Base/BaseResources/Fonts/*.TTF"
+      ],
+      "dependencies": {
+        "Masonry": [
+
+        ]
+      }
+    }
+  ]
 }

@@ -7,7 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Masonry.h"
+
+
+#import "MHWBaseView.h"
+
 
 @interface MHWBaseViewController : UIViewController
+
+@property (nonatomic, strong) MHWBaseView *background;
 
 @end

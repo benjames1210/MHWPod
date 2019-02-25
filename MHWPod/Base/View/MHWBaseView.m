@@ -7,15 +7,34 @@
 //
 
 #import "MHWBaseView.h"
+#import <SDWebImageManager.h>
 
 @implementation MHWBaseView
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
+-(instancetype)initWithFrame:(CGRect)frame {
+    self = [super initWithFrame:frame];
+    if(self) {
+        [self addViews];
+        [self addConstraints];
+    }
+    return self;
 }
-*/
+
+-(void)addViews {
+
+}
+
+-(void)addConstraints {
+    
+}
+
+
+-(void)addImageIntoBackgroundWithPath:(NSString *)imagePath {
+
+}
+
+-(void)addImageIntoBackgroundWithURL:(NSString *)imageUrl {
+
+}
 
 @end
