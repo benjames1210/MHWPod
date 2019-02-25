@@ -76,10 +76,10 @@ Pod::Spec.new do |s|
   s.subspec 'Base' do |bs|
       bs.source_files = 'MHWPod/Base/**/*.{h,m}'
       bs.resources = ['MHWPod/Base/Resources/*.xcassets', 'MHWPod/Base/Resources/Bundle/*.bundle', 'MHWPod/Base/Resources/Plist/*.plist', 'MHWPod/Base/Resources/Plist/*.h', 'MHWPod/Base/Resources/Fonts/*.TTF']
-#      bs.dependency 'Masonry'
-#      bs.dependency 'MJRefresh'
-#      bs.dependency 'YYModel'
-#      bs.dependency 'lottie-ios'
+      bs.dependency 'Masonry'
+      bs.dependency 'MJRefresh'
+      bs.dependency 'YYModel'
+      bs.dependency 'lottie-ios'
 
   end
 end
