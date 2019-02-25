@@ -40,7 +40,7 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/benjames1210/MHWPod.git", :tag => s.version.to_s }
 
   #需要包含的源文件
-  s.source_files  = "MHWPod/**/*.{h,m}"
+#  s.source_files  = "MHWPod/MHWPod/**/*.{h,m}"
   #需要移除的文件
   # s.exclude_files = "Classes/Exclude"
   #公开的头文件。如果没有指定公共头文件，那么source文件中的所有头文件都被认为是公开的。
@@ -51,7 +51,7 @@ Pod::Spec.new do |s|
   # s.resource  = "icon.png"
   #资源文件
   # s.resources = "Resources/*.png"
-  s.resources = "MHWPod/**/Resources/CloudLearning_English_Base.xcassets"
+#  s.resources = "MHWPod/MHWPod/**/Resources/CloudLearning_English_Base.xcassets"
   # s.preserve_paths = "FilesToSave", "MoreFilesToSave"
 
   #需要系统framwork
@@ -68,9 +68,18 @@ Pod::Spec.new do |s|
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
 
   #依赖库 可以写多个 依赖关系可以指定版本需求
-  # s.dependency 'Masonry' , '1.1.0'
-  # s.dependency 'MJRefresh' , '3.1.15.1'
-  # s.dependency 'YYModel', '1.0.4'
-  # s.dependency 'lottie-ios' , '2.5.0'
 
+
+
+  s.default_subspecs = 'Base'
+
+  s.subspec 'Base' do |bs|
+      bs.source_files = 'MHWPod/Base/**/*.{h,m}'
+      bs.resources = ['MHWPod/Base/Resources/*.xcassets', 'MHWPod/Base/Resources/Bundle/*.bundle', 'MHWPod/Base/Resources/Plist/*.plist', 'MHWPod/Base/Resources/Plist/*.h', 'MHWPod/Base/Resources/Fonts/*.TTF']
+#      bs.dependency 'Masonry'
+#      bs.dependency 'MJRefresh'
+#      bs.dependency 'YYModel'
+#      bs.dependency 'lottie-ios'
+
+  end
 end
